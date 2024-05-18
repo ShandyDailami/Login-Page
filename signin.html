@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in Page</title>
+  <link rel="stylesheet" href="output.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+    aside {
+      background-image: url("assets/aside.png");
+    }
+    .drop {
+      box-shadow: 0 0 3px 1px rgba(0, 0, 0, .2);
+    }
+  </style>
+</head>
+<body class="w-full h-full flex">
+  <main class="flex-auto w-72 flex flex-col justify-center items-center">
+    <h1 class="font-semibold text-2xl cursor-default">Welcome Back</h1>
+    <button class="drop w-60 h-10 flex items-center py-2 px-7 my-5 rounded-sm hover:bg-gray-100 transition duration-200 ease-in-out">
+      <img src="assets/google icon.png" alt="Google" class="w-1 flex-auto">
+      <p class="flex-auto text-sm px-2 font-medium">Sign in with Google</p>
+    </button>
+    <div class="flex items-center justify-between mb-5 cursor-default">
+      <div class="h-0.5 w-9 bg-gray-200">
+      </div>
+      <p class="text-gray-300 px-2 text-sm font-medium">OR SIGN IN WITH EMAIL</p>
+      <div class="h-0.5 w-9 bg-gray-200"></div>
+    </div>
+    <form action="" method="post" class="flex flex-col items-end">
+      <input  type="email" id="email" class="drop w-60 h-9 pl-3 mb-3 rounded-sm text-sm placeholder:text-sm placeholder:font-medium placeholder:text-gray-300" placeholder="Your Email">
+      <input type="password" id="password" class="drop w-60 h-9 pl-2 rounded-sm text-sm placeholder:text-sm placeholder:font-medium placeholder:text-gray-300" placeholder="Your Password">
+      <a href="#" class="text-xs underline text-[#ED9455] my-5">Forgot password</a>
+      <button id="signInBtn" class="w-60 py-2 px-7 rounded-sm text-sm bg-[#ED9455] font-medium text-white hover:bg-[#e68d4d] transition duration-300 ease-in-out">Sign in</button>
+    </form>
+    <p class=" cursor-default text-xs mt-5 text-gray-300 font-medium">Don't have an account? <a href="#" class="underline text-[#ED9455] hover:text-[#e68d4d]">Sign Up</a></p>
+  </main>
+  <aside class="bg-cover bg-center h-screen flex-auto w-24" 
+  style="background-image: url('assets/aside.png')"></aside>
+  <script>
+    const email = document.getElementById("email")
+    const password = document.getElementById("password")
+    const signInBtn = document.getElementById("signInBtn")
+    signInBtn.addEventListener("click", () => {
+      if(email.value == "admin" && password.value == "123") {
+        window.location.href = "index.html"
+      } else {
+        alert("Sign in gagal")
+        window.location.href = "signin.html"
+      }
+    })
+  </script>
+</body>
+</html>
